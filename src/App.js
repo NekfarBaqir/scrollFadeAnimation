@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import styles from "./App.module.css";
+import Card from "./components/Card/Card";
+import DATA from "./data/data.json";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+    <div className={styles.header}>
+      <h1>Welcome to reactjs, Framer motion and react-intersection observer</h1>
+    </div>
+      <div className={styles.cardSectionContainer}>
+        {DATA.map((item) => {
+          return <Card data={item} />;
+        })}
+      </div>
     </div>
   );
 }
